@@ -1,9 +1,8 @@
 {
 	"name": "@zerobyte/object-model-js",
 	"version": "0.0.2",
-	"description": "Common model set and utilities for applications",
+	"description": "Common model set and utilities for application models",
 	"main": "index.js",
-	// "private": true,
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
