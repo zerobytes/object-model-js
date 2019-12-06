@@ -9,10 +9,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/zerobytes/seed-object-model.git"
+		"url": "https://github.com/zerobytes/object-model-js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/zerobytes/seed-object-model/issues"
+		"url": "https://github.com/zerobytes/object-model-js/issues"
 	},
 	"keywords": [
 		"model",
