@@ -1,0 +1,30 @@
+{
+	"name": "seed-object-model",
+	"version": "0.2.2",
+	"description": "Common model set and utilities for applications",
+	"main": "index.js",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zerobytes/seed-object-model.git"
+	},
+	"bugs": {
+		"url": "https://github.com/zerobytes/seed-object-model/issues"
+	},
+	"keywords": [
+		"model",
+		"common-ground"
+	],
+	"author": "Zerobyte",
+	"contributors": [
+		"guilherme.ferreira@zerobyte.app",
+		"bruno.teixeira.silva@gmail.com"
+	],
+	"license": "ISC",
+	"dependencies": {
+		"firebase-basic-service": "git+https://github.com/zerobytes/firebase-basic-service.git"
+	}
+}
