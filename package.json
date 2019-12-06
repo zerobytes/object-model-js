@@ -24,6 +24,6 @@
 	],
 	"license": "ISC",
 	"dependencies": {
-		"@zerobytes/firebase-basic-service": "^1.0.4"
+		"@zerobytes/firebase-basic-service": "^1.0.6"
 	}
 }
