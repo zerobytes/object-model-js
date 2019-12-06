@@ -1,4 +1,4 @@
-const BasicService = require('firebase-basic-service').BasicService;
+const BasicService = require('@zerobytes/firebase-basic-service').BasicService;
 const objectFill = require('./_functions').objectFill;
 
 /**
