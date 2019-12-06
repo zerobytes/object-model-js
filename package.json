@@ -1,5 +1,5 @@
 {
-	"name": "seed-object-model",
+	"name": "object-model-js",
 	"version": "0.2.2",
 	"description": "Common model set and utilities for applications",
 	"main": "index.js",
