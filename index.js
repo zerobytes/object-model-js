@@ -1,4 +1,5 @@
 const ModelBase = require('./src/ModelBase').default;
+const ShapeBase = require('./src/ShapeBase').default;
 const FT = require('./src/FieldTypes');
 const FieldTypes = FT.default;
 const FieldType = FT.FieldType;
@@ -10,5 +11,6 @@ module.exports = {
 	FieldType,
 	ComplexTypes,
 	ModelBase,
+	ShapeBase,
 	Validator
 };
