@@ -1,10 +1,11 @@
 {
 	"name": "@zerobytes/object-model-js",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "Common model set and utilities for application models",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"prebuild": "rimraf ./dist",
+		"build": "babel 'src' -d 'dist'"
 	},
 	"repository": {
 		"type": "git",
@@ -25,5 +26,11 @@
 	"license": "ISC",
 	"dependencies": {
 		"@zerobytes/firebase-basic-service": "^1.0.6"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.7.5",
+		"@babel/core": "^7.7.5",
+		"@babel/preset-env": "^7.7.6",
+		"rimraf": "^3.0.0"
 	}
 }
