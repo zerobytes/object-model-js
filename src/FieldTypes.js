@@ -12,7 +12,8 @@ const ComplexTypes = {
 };
 
 exports.FieldType = FieldType;
-exports.FieldType = ComplexTypes;
+exports.ComplexTypes = ComplexTypes;
+
 exports.default = {
 	String: 'string',
 	Integer: 'integer',
