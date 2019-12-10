@@ -1,11 +1,11 @@
 {
 	"name": "@zerobytes/object-model-js",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Common model set and utilities for application models",
-	"main": "src/index.js",
+	"main": "index.js",
 	"scripts": {
 		"prebuild": "rimraf ./dist",
-		"build": "babel 'src' -d 'dist'"
+		"build": "npx babel . --out-dir 'dist' --ignore node_modules --copy-files"
 	},
 	"repository": {
 		"type": "git",
