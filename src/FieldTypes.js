@@ -8,11 +8,12 @@ const ComplexTypes = {
 	ShapedAs: 'ShapedAs',
 	ArrayOf: 'ArrayOf',
 	InstanceOf: 'InstanceOf',
-	IdOf:'IdOf'
+	IdOf: 'IdOf'
 };
 
-export { FieldType, ComplexTypes };
-export default {
+exports.FieldType = FieldType;
+exports.FieldType = ComplexTypes;
+exports.default = {
 	String: 'string',
 	Integer: 'integer',
 	Float: 'float',
@@ -31,7 +32,7 @@ export default {
 	InstanceOf: (Type) => {
 		return new FieldType(ComplexTypes.InstanceOf, Type);
 	},
-	IdOf:(ModelBase)=>{
-		return new FieldType(ComplexTypes.IdOf,ModelBase);
+	IdOf: (ModelBase) => {
+		return new FieldType(ComplexTypes.IdOf, ModelBase);
 	}
 };
