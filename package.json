@@ -1,6 +1,6 @@
 {
 	"name": "@zerobytes/object-model-js",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Common model set and utilities for application models",
 	"main": "index.js",
 	"scripts": {
