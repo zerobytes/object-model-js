@@ -36,7 +36,7 @@ PlainObject.prototype.$fill = function(data = null) {
 /**
  * Returns a plain object based on the $fieldConfig properties
  */
-PlainObject.prototype.$toPlainObject = function(data = null) {
+PlainObject.prototype.$toPlainObject = function() {
 	let plain = {};
 	Object.keys(this.$fieldConfig).map((property) => {
 		plain[property] = this[property];
