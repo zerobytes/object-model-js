@@ -13,7 +13,7 @@ PlainObject.prototype.$fieldConfig = {};
  * Applies an object filling based on passed data
  * @param {object} data object contaning the default properties of this model, and its values
  */
-PlainObject.prototype.$fill = (data = null) => {
+PlainObject.prototype.$fill = function(data = null) {
 	data = data instanceof Object ? data : {};
 	if (data.uid) {
 		this.uid = data.uid;
@@ -36,7 +36,7 @@ PlainObject.prototype.$fill = (data = null) => {
 /**
  * Returns a plain object based on the $fieldConfig properties
  */
-PlainObject.prototype.$toPlainObject = () => {
+PlainObject.prototype.$toPlainObject = function(data = null) {
 	let plain = {};
 	Object.keys(this.$fieldConfig).map((property) => {
 		plain[property] = this[property];
