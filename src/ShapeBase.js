@@ -1,4 +1,4 @@
-const PlainObject = requre('./PlainObject').default;
+const PlainObject = require('./PlainObject').default;
 
 class ShapeBase extends PlainObject {}
 
