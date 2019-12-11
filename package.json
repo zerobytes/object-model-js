@@ -1,6 +1,6 @@
 {
 	"name": "@zerobytes/object-model-js",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Common model set and utilities for application models",
 	"main": "index.js",
 	"scripts": {
@@ -23,7 +23,7 @@
 		"guilherme.ferreira@zerobyte.app",
 		"bruno.teixeira.silva@gmail.com"
 	],
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"@zerobytes/firebase-basic-service": "^1.0.6"
 	},
