@@ -23,7 +23,7 @@
 		"guilherme.ferreira@zerobyte.app",
 		"bruno.teixeira.silva@gmail.com"
 	],
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"@zerobytes/firebase-basic-service": "*"
 	},
