@@ -24,6 +24,9 @@ PlainObject.prototype.$fill = function(data = null) {
 	if (data.createdBy) {
 		this.createdBy = data.createdBy;
 	}
+	if (data.deleted !== undefined) {
+		this.deleted = data.deleted;
+	}
 	//Creates all the public properties for this object
 	//based on the $fieldConfig
 	Object.keys(this.$fieldConfig).map((property) => {
@@ -38,6 +41,18 @@ PlainObject.prototype.$fill = function(data = null) {
  */
 PlainObject.prototype.$toPlainObject = function() {
 	let plain = {};
+	if (this.uid) {
+		plain.uid = this.uid;
+	}
+	if (this.deleted !== undefined) {
+		plain.deleted = this.deleted;
+	}
+	if (this.createdAt) {
+		plain.createdAt = this.createdAt;
+	}
+	if (this.createdBy) {
+		plain.createdBy = this.createdBy;
+	}
 	Object.keys(this.$fieldConfig).map((property) => {
 		plain[property] = this[property];
 	});
