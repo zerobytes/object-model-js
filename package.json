@@ -1,6 +1,6 @@
 {
 	"name": "@zerobytes/object-model-js",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Common model set and utilities for application models",
 	"main": "index.js",
 	"scripts": {
@@ -25,7 +25,7 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"@zerobytes/firebase-basic-service": "*"
+		"@zerobytes/firebase-basic-service": "^1.0.8"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.5",

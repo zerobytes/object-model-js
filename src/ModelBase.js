@@ -1,5 +1,6 @@
 const BasicService = require('@zerobytes/firebase-basic-service').BasicService;
 const PlainObject = require('./PlainObject').default;
+const FieldTypes = require('./FieldTypes').default;
 
 /**
  * Holds a standard functional object which can be validated automatically
@@ -25,7 +26,14 @@ ModelBase.prototype.getService = function(firebase, store, reducerName) {
 	let defaultObject = {};
 	Object.keys(this.$fieldConfig).map((property) => {
 		let field = this.$fieldConfig[property];
-		defaultObject[property] = field.defaultValue || '';
+		switch (field.type) {
+			case FieldTypes.Boolean:
+				defaultObject[property] = field.defaultValue;
+				break;
+			default:
+				defaultObject[property] = field.defaultValue || '';
+				break;
+		}
 	});
 
 	return BasicService({
