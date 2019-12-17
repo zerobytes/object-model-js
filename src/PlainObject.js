@@ -31,7 +31,17 @@ PlainObject.prototype.$fill = function(data = null) {
 	//based on the $fieldConfig
 	Object.keys(this.$fieldConfig).map((property) => {
 		let field = this.$fieldConfig[property];
-		this[property] = data[property] || field.defaultValue || '';
+		this[property] = data[property];
+		if (typeof data[property] !== 'boolean' && isNaN(data[property]) && !data[property]) {
+			this[property] = field.defaultValue;
+			if (
+				!field.defaultValue &&
+				typeof field.defaultValue !== 'boolean' &&
+				isNaN(field.defaultValue)
+			) {
+				this[property] = '';
+			}
+		}
 	});
 
 	return this;
