@@ -85,4 +85,4 @@ PlainObject.prototype.$validate = function() {
 	return errors;
 };
 
-exports.default = PlainObject;
+export default PlainObject;

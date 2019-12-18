@@ -1,6 +1,6 @@
-const BasicService = require('@zerobytes/firebase-basic-service').BasicService;
-const PlainObject = require('./PlainObject').default;
-const FieldTypes = require('./FieldTypes').default;
+import { BasicService } from '@zerobytes/firebase-basic-service';
+import PlainObject from './PlainObject';
+import FieldTypes from './FieldTypes';
 
 /**
  * Holds a standard functional object which can be validated automatically
@@ -45,4 +45,4 @@ ModelBase.prototype.getService = function(firebase, store, reducerName) {
 	});
 };
 
-exports.default = ModelBase;
+export default ModelBase;
