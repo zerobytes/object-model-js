@@ -1,13 +1,4 @@
-import * as scrypt from 'scrypt';
 import md5 from 'md5';
-
-const _scryptKeyLength = 32;
-
-const _scryptParams = {
-	N: 8,
-	r: 8,
-	p: 1
-};
 
 /**
  * Will generate a salt by the maximum of the length specified.
@@ -26,23 +17,6 @@ function generateSalt(length = 8) {
 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
 	}
 	return result;
-}
-
-/**
- * Applies a default auth-system-wide passwd hash
- *
- * @param {string} pwd The password to encrypt
- * @param {string} salt The user-level salt to be hashed
- * @param {object} [scryptParams] Optional. Can pass on specific crypto method params
- * @param {number} [scryptKeyLength] Optional. Can specify specific key length
- *
- * @returns {string} encrypted password for save OR comparison
- */
-function pwdHash(pwd, salt, scryptParams = _scryptParams, scryptKeyLength = _scryptKeyLength) {
-	const b64Pwd = Buffer.from(pwd),
-		b64Salt = Buffer.from(salt);
-
-	return scrypt.hash(b64Pwd, scryptParams, scryptKeyLength, b64Salt);
 }
 
 /**
@@ -68,4 +42,4 @@ function md5Hash(text) {
 	return md5(text);
 }
 
-module.exports = { generateSalt, md5Hash, pwdHash, toBase64 };
+module.exports = { generateSalt, md5Hash, toBase64 };
