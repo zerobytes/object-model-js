@@ -64,9 +64,20 @@ PlainObject.prototype.$toPlainObject = function() {
 		plain.createdBy = this.createdBy;
 	}
 	Object.keys(this.$fieldConfig).map((property) => {
-		plain[property] = this[property];
+		//Object prop has a different saving format
+		if (typeof this.$fieldConfig[propName].saveAs === 'function') {
+			this.$castObjectTypedProp(property, plain);
+		} else {
+			plain[property] = this[property];
+		}
 	});
 	return plain;
+};
+
+PlainObject.prototype.$castObjectTypedProp = function(propName, destinationObject) {
+	destinationObject[propName] = this.$fieldConfig[propName].saveAs(this);
+
+	return destinationObject[propName];
 };
 
 /**
