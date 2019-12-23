@@ -65,8 +65,8 @@ PlainObject.prototype.$toPlainObject = function() {
 	}
 	Object.keys(this.$fieldConfig).map((property) => {
 		//Object prop has a different saving format
-		if (typeof this.$fieldConfig[propName].saveAs === 'function') {
-			this.$castObjectTypedProp(property, plain);
+		if (typeof this.$fieldConfig[propName].transform === 'function') {
+			this.$applyFieldTransform(property, plain);
 		} else {
 			plain[property] = this[property];
 		}
@@ -74,8 +74,8 @@ PlainObject.prototype.$toPlainObject = function() {
 	return plain;
 };
 
-PlainObject.prototype.$castObjectTypedProp = function(propName, destinationObject) {
-	destinationObject[propName] = this.$fieldConfig[propName].saveAs(this);
+PlainObject.prototype.$applyFieldTransform = function(propName, destinationObject) {
+	destinationObject[propName] = this.$fieldConfig[propName].transform(this, this[propName]);
 
 	return destinationObject[propName];
 };
