@@ -65,7 +65,7 @@ PlainObject.prototype.$toPlainObject = function() {
 	}
 	Object.keys(this.$fieldConfig).map((property) => {
 		//Object prop has a different saving format
-		if (typeof this.$fieldConfig[propName].transform === 'function') {
+		if (typeof this.$fieldConfig[property].transform === 'function') {
 			this.$applyFieldTransform(property, plain);
 		} else {
 			plain[property] = this[property];
