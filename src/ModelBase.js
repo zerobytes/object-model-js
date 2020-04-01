@@ -21,10 +21,17 @@ class ModelBase extends PlainObject {
  * Returns an instance of BasicService which gives access to several methods
  * regarding firebase.firestore actions.
  * save/patch/get/list/filter/order/limit
+ *
+ * @param {Firebase} firebase Instance
+ * @param {Object} store custom redux store
+ * @param {string} reducerName custom redux reducer
+ * @param {string} collectionPrefix [optional] custom collection prefix. Useful for sub-collections
  */
-ModelBase.prototype.getService = function(firebase, store, reducerName) {
-	let defaultObject = {};
-	Object.keys(this.$fieldConfig).map((property) => {
+ModelBase.prototype.getService = function(firebase, store, reducerName, collectionPrefix = '') {
+	let defaultObject = {},
+		collectionName;
+
+	Object.keys(this.$fieldConfig).forEach((property) => {
 		let field = this.$fieldConfig[property];
 		switch (field.type) {
 			case FieldTypes.Boolean:
@@ -45,9 +52,18 @@ ModelBase.prototype.getService = function(firebase, store, reducerName) {
 		}
 	});
 
+	//Determines reference to the collection
+	collectionName =
+		!collectionPrefix || collectionPrefix === ''
+			? this.getModelName()
+			: `${collectionPrefix}/${this.getModelName()}`;
+
+	//Removing dupes of slash
+	collectionName = collectionName.replace('//', '/');
+
 	return BasicService({
 		firebase,
-		collection: this.getModelName(),
+		collection: collectionName,
 		defaultObject,
 		store,
 		reducerName: reducerName || this.getModelName()
